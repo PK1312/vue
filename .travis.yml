@@ -4,13 +4,14 @@ node_js:
 cache: yarn
 jobs:
   include:
-    stage: lint-flow-types
+    -stage: tests
+    name: "lint-flow-types"
     script: echo "run linting tools"
-    stage: test-cover
-    script: echo "run coverage tests"
-    stage: test-e2e
-    script: echo "run end to end tests"
-    stage: test-ssr-weex
-    script: echo "run some ssr tests?"
-    stage: trigger-regression-test
-    script: echo "cool done"
+    -script: echo "run coverage tests"
+    name: "test-cover"
+    -script: echo "run end to end tests"
+    name: "test-e2e"
+    -script: echo "run some ssr tests?"
+    name: "test-ssr-weex"
+    -script: echo "cool done"
+    name: "trigger-regression-test"
