@@ -1,0 +1,14 @@
+language: node_js
+cache: yarn
+jobs:
+  include:
+    - stage: lint-flow-types
+    script: echo "run linting tools"
+    - stage: test-cover
+    script: echo "run coverage tests"
+    - stage: test-e2e
+    script: echo "run end to end tests"
+    - stage: test-ssr-weex
+    script: echo "run some ssr tests?"
+    - stage: trigger-regression-test
+    script: echo "cool done"
