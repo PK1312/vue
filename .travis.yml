@@ -8,6 +8,8 @@ jobs:
       name: "lint-flow-types"
       script: echo "run linting tools"
     - script: echo "run coverage tests"
+      if: type = pull_request
+      script: echo "run codecov"
       name: "test-cover"
     - script: echo "run end to end tests"
       name: "test-e2e"
@@ -15,3 +17,5 @@ jobs:
       name: "test-ssr-weex"
     - script: echo "cool done"
       name: "trigger-regression-test"
+    - script: echo "ship it!"
+      name: "deploy"
